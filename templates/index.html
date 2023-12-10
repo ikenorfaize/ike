@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cari Laundry Terdekat</title>
+</head>
+<body>
+    <h1>Cari Laundry Terdekat</h1>
+    <form action="/find_nearest_laundry" method="post">
+        <label for="nama_laundry_options">Nama Laundry:</label>
+        <select id="nama_laundry" name="nama_laundry">
+            {% for laundry_name in nama_laundry_options %}
+                <option value="{{ laundry_name }}">{{ laundry_name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="pembayaran_option">Opsi Pembayaran:</label>
+        <select id="pembayaran_option" name="pembayaran_option">
+            {% for pembayaran_option in pembayaran_options %}
+                <option value="{{ pembayaran_option }}">{{ pembayaran_option }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="layanan_option">Opsi Layanan:</label>
+        <select id="layanan_option" name="layanan_option">
+            {% for layanan_option in layanan_options %}
+                <option value="{{ layanan_option }}">{{ layanan_option }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="anjem_input">Gunakan Anjem?</label>
+        <select id="anjem_input" name="anjem_input">
+            <option value="TRUE">Ya</option>
+            <option value="FALSE">Tidak</option>
+        </select><br><br>
+
+        <input type="submit" value="Cari">
+    </form>
+</body>
+</html>
